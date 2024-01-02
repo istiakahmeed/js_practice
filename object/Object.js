@@ -65,4 +65,16 @@
 // console.log(Object.entries(obj));
 // console.log(Object.assign({ a: 20 }, obj));
 
+let Person = function (name, age, email) {
+  this.name = name;
+  this.age = age;
+  this.email = email;
 
+  this.eat = function () {
+    console.log(this.name + " is eating");
+  };
+};
+
+let person = new Person("Minal", 22, "minal@mail.com");
+
+person.eat();
