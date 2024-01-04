@@ -49,19 +49,32 @@ person2.eat();
  * using function and prove function is a object
  */
 
-let Rect = new Function(
-  "width",
-  "height",
-  `
-    this.width = width
-    this.height = height
+// let Rect = new Function(
+//   "width",
+//   "height",
+//   `
+//     this.width = width
+//     this.height = height
 
-    this.draw = function(){
-      console.log(this.width + "  I am width")
-      console.log(this.height + " I am height")
-    }
-    `
-);
+//     this.draw = function(){
+//       console.log(this.width + "  I am width")
+//       console.log(this.height + " I am height")
+//     }
+//     `
+// );
 
-let rect = new Rect(4, 5);
-rect.draw();
+// let rect = new Rect(4, 5);
+// rect.draw();
+
+//Apply , Call, Bind methods about//
+
+function myFun(c, d) {
+  console.log(this.a + this.b + c + d);
+}
+
+//myFun.call({ a: 20, b: 20 }, 10, 20); //--> call method 1st parameter is a object and 2nd argument do provide
+
+//myFun.apply({ a: 20, b: 20 }, [10, 10]); //--> apply method 2nd parameter is a array
+
+let testBind = myFun.bind({ a: 10, b: 20 }, 5, 5); //--> bind method it just keep binding
+testBind();
