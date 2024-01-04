@@ -29,18 +29,39 @@ person2.eat();
  * Constructor pattern for object
  */
 
-let CreatePerson = function (name, age, weight) {
-  this.name = name;
-  this.age = age;
-  this.weight = weight;
+// let CreatePerson = function (name, age, weight) {
+//   this.name = name;
+//   this.age = age;
+//   this.weight = weight;
 
-  this.eat = function () {
-    console.log(this.name + " is eating");
-  };
-};
+//   this.eat = function () {
+//     console.log(this.name + " is eating");
+//   };
+// };
 
-let person1 = new CreatePerson("Minal", 22, "78kg");
+// let person1 = new CreatePerson("Minal", 22, "78kg");
 
-for (let i in person1) {
-  console.log(i);
-}
+// for (let i in person1) {
+//   console.log(i);
+// }
+
+/**
+ * using function and prove function is a object
+ */
+
+let Rect = new Function(
+  "width",
+  "height",
+  `
+    this.width = width
+    this.height = height
+
+    this.draw = function(){
+      console.log(this.width + "  I am width")
+      console.log(this.height + " I am height")
+    }
+    `
+);
+
+let rect = new Rect(4, 5);
+rect.draw();
