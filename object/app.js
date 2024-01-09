@@ -68,13 +68,37 @@ person2.eat();
 
 //Apply , Call, Bind methods about//
 
-function myFun(c, d) {
-  console.log(this.a + this.b + c + d);
-}
+// function myFun(c, d) {
+//   console.log(this.a + this.b + c + d);
+// }
 
 //myFun.call({ a: 20, b: 20 }, 10, 20); //--> call method 1st parameter is a object and 2nd argument do provide
 
 //myFun.apply({ a: 20, b: 20 }, [10, 10]); //--> apply method 2nd parameter is a array
 
-let testBind = myFun.bind({ a: 10, b: 20 }, 5, 5); //--> bind method it just keep binding
-testBind();
+// let testBind = myFun.bind({ a: 10, b: 20 }, 5, 5); //--> bind method it just keep binding
+// testBind();
+
+// using privet attributes in object
+//======================================\\
+
+const _name = Symbol("name");
+const _email = Symbol("email");
+const _age = Symbol("age");
+const _address = Symbol("address");
+class Person {
+  constructor(name, email, age, address) {
+    this[_name] = name;
+    this[_email] = email;
+    this[_age] = age;
+    this[_address] = address;
+  }
+  sendMsg() {
+    console.log(`${this[_name]} sent message`);
+    console.log(`${this[_email]} sent Email`);
+  }
+}
+
+let p1 = new Person("Minal", "minal@gmail.com", 22, "Lalpur");
+
+console.log(p1);
