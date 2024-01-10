@@ -36,7 +36,6 @@ Here are some recommended resources to enhance your JavaScript skills:
   <li>MDN Web Docs: JavaScript Guide</li>
   <li>Eloquent JavaScript: Online Book</li>
   <li>freeCodeCamp: JavaScript Algorithms and Data Structures Certification </li>
-  <li></li>
 </ul>
 
 Feel free to explore additional resources based on your learning style and preferences.

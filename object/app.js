@@ -106,54 +106,72 @@ person2.eat();
 // using getter and setter in object
 //======================================\\
 
-const _name = Symbol("name");
-const _email = Symbol("email");
-const _age = Symbol("age");
-const _address = Symbol("address");
-class Person {
-  constructor(name, email, age, address) {
-    this[_name] = name;
-    this[_email] = email;
-    this[_age] = age;
-    this[_address] = address;
-  }
-  get name() {
-    return this[_name];
-  }
-  set name(value) {
-    this[_name] = value;
-  }
-  get email() {
-    return this[_email];
-  }
-  set email(value) {
-    this[_email] = value;
-  }
+// const _name = Symbol("name");
+// const _email = Symbol("email");
+// const _age = Symbol("age");
+// const _address = Symbol("address");
+// class Person {
+//   constructor(name, email, age, address) {
+//     this[_name] = name;
+//     this[_email] = email;
+//     this[_age] = age;
+//     this[_address] = address;
+//   }
+//   get name() {
+//     return this[_name];
+//   }
+//   set name(value) {
+//     this[_name] = value;
+//   }
+//   get email() {
+//     return this[_email];
+//   }
+//   set email(value) {
+//     this[_email] = value;
+//   }
 
-  get age() {
-    return this[_age];
-  }
-  set age(value) {
-    this[_age] = value;
-  }
-  get address() {
-    return this[_address];
-  }
-  set address(value) {
-    this[_address] = value;
-  }
-  sendMsg() {
-    console.log(`${this[_name]} sent message`);
-    console.log(`${this[_email]} sent Email`);
-  }
+//   get age() {
+//     return this[_age];
+//   }
+//   set age(value) {
+//     this[_age] = value;
+//   }
+//   get address() {
+//     return this[_address];
+//   }
+//   set address(value) {
+//     this[_address] = value;
+//   }
+//   sendMsg() {
+//     console.log(`${this[_name]} sent message`);
+//     console.log(`${this[_email]} sent Email`);
+//   }
+// }
+
+// let p1 = new Person("Minal", "minal@gmail.com", 22, "Lalpur");
+
+// console.log(p1);
+// p1.name = "Tom";
+// p1.email = "tom@gmail.com";
+// p1.age = 20;
+// p1.address = "Natore";
+
+// console.log(p1);
+
+function Square(width) {
+  this.width = width;
+  this.getWidth = function () {
+    console.log(this.width);
+    this.draw();
+  };
 }
 
-let p1 = new Person("Minal", "minal@gmail.com", 22, "Lalpur");
-
-console.log(p1);
-p1.name = "Tom";
-p1.email = "tom@gmail.com";
-p1.age = 20;
-p1.address = "Natore";
-
-console.log(p1);
+Square.prototype = {
+  draw: function () {
+    console.log(this.width + " I am width");
+  },
+  toString: function () {
+    return this.width + " is width";
+  },
+};
+let sqr1 = new Square(10);
