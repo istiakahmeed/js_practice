@@ -65,16 +65,53 @@
 // console.log(Object.entries(obj));
 // console.log(Object.assign({ a: 20 }, obj));
 
-let Person = function (name, age, email) {
-  this.name = name;
-  this.age = age;
-  this.email = email;
+// let Person = function (name, age, email) {
+//   this.name = name;
+//   this.age = age;
+//   this.email = email;
 
-  this.eat = function () {
-    console.log(this.name + " is eating");
-  };
+//   this.eat = function () {
+//     console.log(this.name + " is eating");
+//   };
+// };
+
+// let person = new Person("Minal", 22, "minal@mail.com");
+
+// person.eat();
+
+// Inheritance
+
+// Parent class
+function Animal(name) {
+  this.name = name;
+}
+
+// Adding a method to the prototype of the parent class
+Animal.prototype.sayHello = function () {
+  console.log(`Hello, I'm ${this.name}`);
 };
 
-let person = new Person("Minal", 22, "minal@mail.com");
+// Child class inheriting from the parent class
+function Dog(name, breed) {
+  // Call the parent constructor with the current object as the context
+  Animal.call(this, name);
+  this.breed = breed;
+}
 
-person.eat();
+// Set up the prototype chain by creating a new object with the parent's prototype
+Dog.prototype = Object.create(Animal.prototype);
+
+// Set the constructor of the child class to itself
+Dog.prototype.constructor = Dog;
+
+// Adding a method to the prototype of the child class
+Dog.prototype.bark = function () {
+  console.log("Woof! Woof!");
+};
+
+// Create an instance of the child class
+const myDog = new Dog("Buddy", "Golden Retriever");
+
+// Call methods from both parent and child classes
+myDog.sayHello(); // Output: Hello, I'm Buddy
+myDog.bark(); // Output: Woof! Woof!
