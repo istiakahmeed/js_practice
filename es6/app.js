@@ -37,18 +37,52 @@
 
 /* Object to Array convert*/
 
-let obj = {
-  a: 10,
-  b: 20,
-};
+// let obj = {
+//   a: 10,
+//   b: 20,
+// };
 
-console.log(Object.entries(obj));
+// console.log(Object.entries(obj));
 
-// Array to Object convert
+// // Array to Object convert
 
-let arr = [
-  ["a", 10],
-  ["b", 20],
-];
+// let arr = [
+//   ["a", 10],
+//   ["b", 20],
+// ];
 
-console.log(Object.fromEntries(arr));
+// console.log(Object.fromEntries(arr));
+
+// Iterator
+
+let arr = [1, 2, 3, 4];
+// for (let i = 0; i < arr.length; i++) {
+//   console.log(arr[i]);  //==> it's normal iterator
+// }
+
+// function createIterator(collection) {
+//   let i = 0;
+//   return {
+//     next() {
+//       return {
+//         done: i >= collection.length, //==> own iterator
+//         value: collection[i++],
+//       };
+//     },
+//   };
+// }
+
+// let iterator = createIterator(arr);
+// console.log(iterator.next());
+// console.log(iterator.next());
+// console.log(iterator.next());
+// console.log(iterator.next());
+// console.log(iterator.next());
+// console.log(iterator.next());
+
+let itera = arr[Symbol.iterator](); //==> built in iterator in js
+console.log(itera.next());
+console.log(itera.next());
+console.log(itera.next());
+console.log(itera.next());
+console.log(itera.next());
