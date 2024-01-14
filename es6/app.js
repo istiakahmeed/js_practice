@@ -19,18 +19,36 @@
 
 //Normal function
 
-function sum(a, b) {
-  return a + b;
-}
-//  ==> it's a normal function
-console.log(sum(1, 2));
+// function sum(a, b) {
+//   return a + b;
+// }
+// //  ==> it's a normal function
+// console.log(sum(1, 2));
 
-//Arrow function with parameters
+// //Arrow function with parameters
 
-let add = (a, b) => a + b; //Arrow function
+// let add = (a, b) => a + b; //Arrow function
 
-console.log(add(1, 2));
+// console.log(add(1, 2));
 
-let sqr = (x) => x * x;
+// let sqr = (x) => x * x;
 
-console.log(sqr(2));
+// console.log(sqr(2));
+
+/* Object to Array convert*/
+
+let obj = {
+  a: 10,
+  b: 20,
+};
+
+console.log(Object.entries(obj));
+
+// Array to Object convert
+
+let arr = [
+  ["a", 10],
+  ["b", 20],
+];
+
+console.log(Object.fromEntries(arr));
