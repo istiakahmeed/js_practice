@@ -55,7 +55,7 @@
 
 // Iterator
 
-let arr = [1, 2, 3, 4];
+let arr = [10, 20, 30, 40];
 // for (let i = 0; i < arr.length; i++) {
 //   console.log(arr[i]);  //==> it's normal iterator
 // }
@@ -80,9 +80,37 @@ let arr = [1, 2, 3, 4];
 // console.log(iterator.next());
 // console.log(iterator.next());
 
-let itera = arr[Symbol.iterator](); //==> built in iterator in js
-console.log(itera.next());
-console.log(itera.next());
-console.log(itera.next());
-console.log(itera.next());
-console.log(itera.next());
+// let itera = arr[Symbol.iterator](); //==> built in iterator in js
+// console.log(itera.next());
+// console.log(itera.next());
+// console.log(itera.next());
+// console.log(itera.next());
+// console.log(itera.next());
+
+// Generator function
+
+function* createGenerator() {
+  let count = 0;
+  while (true) {
+    yield count++;
+  }
+}
+
+let myGen = createGenerator();
+console.log(myGen.next());
+console.log(myGen.next());
+console.log(myGen.next());
+
+function* newGenerator(collection) {
+  for (let i = 0; i < collection.length; i++) {
+    yield collection[i];
+  }
+}
+
+let newGen = newGenerator(arr);
+
+console.log(newGen.next());
+console.log(newGen.next());
+console.log(newGen.next());
+console.log(newGen.next());
+console.log(newGen.next());
