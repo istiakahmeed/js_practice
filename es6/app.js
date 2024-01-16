@@ -89,28 +89,51 @@ let arr = [10, 20, 30, 40];
 
 // Generator function
 
-function* createGenerator() {
-  let count = 0;
-  while (true) {
-    yield count++;
-  }
-}
+// function* createGenerator() {
+//   let count = 0;
+//   while (true) {
+//     yield count++;
+//   }
+// }
 
-let myGen = createGenerator();
-console.log(myGen.next());
-console.log(myGen.next());
-console.log(myGen.next());
+// let myGen = createGenerator();
+// console.log(myGen.next());
+// console.log(myGen.next());
+// console.log(myGen.next());
 
-function* newGenerator(collection) {
-  for (let i = 0; i < collection.length; i++) {
-    yield collection[i];
-  }
-}
+// function* newGenerator(collection) {
+//   for (let i = 0; i < collection.length; i++) {
+//     yield collection[i];
+//   }
+// }
 
-let newGen = newGenerator(arr);
+// let newGen = newGenerator(arr);
 
-console.log(newGen.next());
-console.log(newGen.next());
-console.log(newGen.next());
-console.log(newGen.next());
-console.log(newGen.next());
+// console.log(newGen.next());
+// console.log(newGen.next());
+// console.log(newGen.next());
+// console.log(newGen.next());
+// console.log(newGen.next());
+
+//Set and Map
+
+// let set = new Set(arr);
+// set.add(5);
+
+// console.log(set.entries());
+// console.log(set.keys());
+// console.log(set.values());
+// console.log(set.delete(5));
+
+// Map
+
+let map = new Map();
+map.set("a", "Minal");
+// map.clear();
+// map.values();
+// map.entries();
+// map.size;
+map.forEach(function (key) {
+  console.log(key);
+});
+// console.log(map);
