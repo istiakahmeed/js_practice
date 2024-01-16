@@ -127,13 +127,78 @@ let arr = [10, 20, 30, 40];
 
 // Map
 
-let map = new Map();
-map.set("a", "Minal");
-// map.clear();
-// map.values();
-// map.entries();
-// map.size;
-map.forEach(function (key) {
-  console.log(key);
-});
+// let map = new Map();
+// map.set("a", "Minal");
+// // map.clear();
+// // map.values();
+// // map.entries();
+// // map.size;
+// map.forEach(function (key) {
+//   console.log(key);
+// });
 // console.log(map);
+
+/**
+ * Es6 class, constructor, and inheritance
+ */
+
+// class Person {
+//   //==> Class is a shape in object creation
+//   constructor(name, age) {
+//     this.name = name;
+//     this.age = age;
+//   }
+//   eat() {
+//     console.log(`${this.name} is eating`);
+//   }
+// }
+
+// let p1 = new Person("John", 10);
+
+// console.log(p1.name);
+// p1.eat();
+
+// Privet properties
+
+const _name = Symbol("name"); //==> its privet property
+const _email = Symbol("email"); //==> don't change
+
+class Address {
+  constructor(name, email) {
+    this[_name] = name;
+    this[_email] = email;
+  }
+  get name() {
+    return this[_name];
+  } // getter and setter
+  set name(value) {
+    this[_name] = value;
+  }
+  fullAdd() {
+    console.log(`My name is ${this[_name]} \nMy email is ${this[_email]}`);
+  }
+}
+
+let address = new Address("Minal", "minal@gmail.com");
+address.name = "Tom";
+console.log(address);
+address.fullAdd();
+
+// Inheritance
+
+class Person extends Address {
+  constructor(name, email, age) {
+    super(name, email); // inherited
+    this.age = age;
+  }
+
+  fullAdd() {
+    super.fullAdd(); // overridden
+    console.log(`my age ${this.age}`);
+  }
+}
+
+let p1 = new Person("Minal", "minal@gmail.com", 22);
+
+console.log(p1);
+p1.fullAdd();
