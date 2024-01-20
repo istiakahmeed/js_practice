@@ -26,6 +26,17 @@ window.onload = function () {
   );
 };
 
+cityInput.addEventListener("keypress", function (e) {
+  if (e.key === "Enter") {
+    if (e.target.value) {
+      getWeatherData(e.target.value, null);
+      e.target.value = "";
+    } else {
+      alert("Please Enter a Valid City Name");
+    }
+  }
+});
+
 function getWeatherData(city = DEFAULT_CITY, coords) {
   let url = BASE_URL;
 
@@ -46,9 +57,20 @@ function getWeatherData(city = DEFAULT_CITY, coords) {
         pressure: data.main.pressure,
         humidity: data.main.humidity,
       };
-      console.log(weather);
+      setWeather(weather);
     })
     .catch((e) => {
       console.log(e);
     });
+}
+
+function setWeather(weather) {
+  condition.src = `${ICON_URL}${weather.icon}.png`;
+  city.innerHTML = weather.name;
+  country.innerHTML = weather.country;
+  mainText.innerHTML = weather.main;
+  description.innerHTML = weather.description;
+  temp.innerHTML = weather.temp;
+  pressure.innerHTML = weather.pressure;
+  humidity.innerHTML = weather.humidity;
 }
