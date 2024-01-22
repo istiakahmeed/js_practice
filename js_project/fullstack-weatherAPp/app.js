@@ -70,7 +70,7 @@ function setWeather(weather) {
   country.innerHTML = weather.country;
   mainText.innerHTML = weather.main;
   description.innerHTML = weather.description;
-  temp.innerHTML = weather.temp;
-  pressure.innerHTML = weather.pressure;
+  temp.innerHTML = `${(weather.temp - 273.15).toFixed()}°C`;
+  pressure.innerHTML = weather.pressure + "MB";
   humidity.innerHTML = weather.humidity;
 }
