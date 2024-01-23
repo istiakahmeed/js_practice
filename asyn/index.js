@@ -6,29 +6,39 @@ const data = {
 };
 
 // Make a POST request using the fetch API
-fetch(url, {
-  method: "POST",
-  headers: {
-    "Content-Type": "application/json", // Specify the content type if sending JSON data
-    // Add any other headers if needed
-  },
-  body: JSON.stringify(data), // Convert the data to JSON format
-})
-  .then((response) => response.json())
-  .then((data) => console.log("Success:", data))
-  .catch((error) => console.error("Error:", error));
+// fetch(url, {
+//   method: "POST",
+//   headers: {
+//     "Content-Type": "application/json", // Specify the content type if sending JSON data
+//     // Add any other headers if needed
+//   },
+//   body: JSON.stringify(data), // Convert the data to JSON format
+// })
+//   .then((response) => response.json())
+//   .then((data) => console.log("Success:", data))
+//   .catch((error) => console.error("Error:", error));
 
-fetch(url, {
-  method: "POST",
+// fetch(url, {
+//   method: "POST",
+//   headers: {
+//     "Content-Type": "application/json",
+//   },
+//   body: JSON.stringify(data),
+// })
+//   .then((response) => response.json())
+//   .then((data) => {
+//     console.log(data);
+//   })
+//   .catch((error) => {
+//     console.log(error);
+//   });
+
+// using AXIOS API
+
+post(url, data, {
   headers: {
     "Content-Type": "application/json",
   },
-  body: JSON.stringify(data),
 })
-  .then((response) => response.json())
-  .then((data) => {
-    console.log(data);
-  })
-  .catch((error) => {
-    console.log(error);
-  });
+  .then((response) => console.log(response))
+  .catch((error) => console.error("Error:", error));
