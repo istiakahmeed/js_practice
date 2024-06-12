@@ -50,3 +50,18 @@ Part one of a two part (Algorithms and Data structures)
 ## What is Algorithm ?
 
 An algorithm is a set of well-defined instructions to solve a particular problem.
+
+## What is Characteristics ?
+
+well defined inputs and outputs.
+Each step should be clear and unambiguous language independent
+
+## Why algorithms?
+
+As a developer going to come across that you need to solve.</br>
+Learning algorithms translates to learning different techniques to efficiently solve those problems.</br>
+One problem can be solve in many different ways.every algorithm comes with its own tradeoffs when its come to performance.
+
+## Algorithms analysis :
+
+there a multiple ways to solve one problem.
