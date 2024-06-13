@@ -65,3 +65,14 @@ One problem can be solve in many different ways.every algorithm comes with its o
 ## Algorithms analysis :
 
 there a multiple ways to solve one problem.
+
+## Algorithms analysis contd :
+
+The absolute running time of an algorithm cannot be predicted , since it depends on a number of factors. </br>
+
+- programming language use to implement the algorithm
+- The computer the program runs on
+- other programs running at the same time
+- Quality of the operating system.
+
+we evaluate performance of on algorithms in turn of its inputs size,
