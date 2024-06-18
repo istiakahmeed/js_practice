@@ -76,3 +76,15 @@ The absolute running time of an algorithm cannot be predicted , since it depends
 - Quality of the operating system.
 
 we evaluate performance of on algorithms in turn of its inputs size,
+
+## Big O Notation
+
+### O(1) - Constant Time
+
+The algorithm's runtime is constant and does not change with the input size.
+
+```javascript
+function getFirstElement(arr) {
+  return arr[0];
+}
+```
