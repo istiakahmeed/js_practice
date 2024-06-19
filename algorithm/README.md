@@ -77,14 +77,46 @@ The absolute running time of an algorithm cannot be predicted , since it depends
 
 we evaluate performance of on algorithms in turn of its inputs size,
 
+## How to represent Complexity ?
+
+Asymptotic notations </br>
+
+- Mathematical tools to represent time and space complexity </br>
+
+  1. Big - O Notation (O - notation) worst case complexity </br>
+  2. Omega Notation (ω - notation) best case complexity </br>
+  3. Theta Notation (θ - notation) average case complexity
+
 ## Big O Notation
 
 ### O(1) - Constant Time
 
-The algorithm's runtime is constant and does not change with the input size.
+The worst case complexity of an algorithm is represented using the big - O notation. </br>
+Big - O notation describe the complexity of on algorithm using algebraic terms. </br>
+
+It has two important characteristics </br>
+
+- Its expressed terms of the input </br>
+- It focuses on the bigger picture with out getting caught in the minute details.
 
 ```javascript
-function getFirstElement(arr) {
-  return arr[0];
+function Summation(n) {
+  let sum = 0;
+  for (let i = 0; i < n; i++) {
+    sum += i;
+  }
+  return sum;
 }
 ```
+
+## Space Complexity
+
+O (1) - Constant </br>
+O (n) - Linear </br>
+O (1) - Logarithm </br>
+
+## Few points to note
+
+Multiple algorithms exist for the same problem and there in no one right solution. Different algorithms work well under different constraints. </br>
+The same algorithm with the same programming language can be implemented in deferent ways. </br>
+When write program at work don't lose sight of the big picture.
