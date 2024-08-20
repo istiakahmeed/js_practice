@@ -120,3 +120,49 @@ O (1) - Logarithm </br>
 Multiple algorithms exist for the same problem and there in no one right solution. Different algorithms work well under different constraints. </br>
 The same algorithm with the same programming language can be implemented in deferent ways. </br>
 When write program at work don't lose sight of the big picture.
+
+## Object - Big - O
+
+An object is a key value pairs. <hr/>
+Insert - O(1) <br/>
+Remove - O(1) <br/>
+Access - O(1) <br/>
+Search - O(n) <br/>
+Object.keys - O(n) <br/>
+Object.values - O(n) <br/>
+Object.entries - O(n) <br/>
+
+```javascript
+const person = {
+  firstName: "John",
+  lastName: "Doe",
+};
+```
+
+## Array - Big - O
+
+An array is an ordered collection of values. <hr/>
+Insert - O(1) <br/>
+Remove - O(n) <br/>
+Access - O(1) <br/>
+Search - O(n) <br/>
+Push / Pop - O(1) <br/>
+Shift / Unshift / Concat / Slice / Splice - O(n) <br/>
+ForEach / map / filter / reduce - O(n) <br/>
+
+## Math Algorithm
+
+- Fibonacci Sequence
+- Factorial Sequence
+- Prime Number
+- Power of Two
+- Recursion
+
+### Fibonacci Sequence
+
+In mathematic, the Fibonacci Sequence which is each number is the <br/>
+sum of the two Preceding ones. The first two numbers in the sequence 0 an 1.
+
+### Factorial Sequence
+
+In mathematical, the factorial of a non-negative integer 'n' denoted n!, is the product of all positive integers less than or equal to 'n'
